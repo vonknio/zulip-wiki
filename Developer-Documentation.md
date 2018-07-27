@@ -1,7 +1,7 @@
 **Zulip Terminal** is a light and fast terminal client for [Zulip](https://zulipchat.com). It's written in python and :snake: only.
 
 ## Overview
-Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retrieve all the information it displays. ZT has [MVC structure](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) at it's core. Here is a description of some of it's files:
+Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retrieve all the information it displays. It has [MVC structure](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) at it's core. Here is a description of some of it's files:
  
 | File/Folder                                           | Description                                   |
 | ----------------------------------------------------- | --------------------------------------------- |
