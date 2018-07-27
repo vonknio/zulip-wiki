@@ -14,5 +14,5 @@ Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retri
 |              ui_tools                                 | Has all the UI elements displayed by View     |
 |              cli/run.py                               | Runs the app                                  |
 
-Zulip Terminal uses [urwid](http://urwid.org/) to render the UI components in terminal. Urwid is an awesome library through which you can render a decent terminal UI just using python. [Urwid's Tutorial] is a great place to start for new contributors.
+Zulip Terminal uses [urwid](http://urwid.org/) to render the UI components in terminal. Urwid is an awesome library through which you can render a decent terminal UI just using python. [Urwid's Tutorial](http://http://urwid.org/tutorial/index.html) is a great place to start for new contributors.
 
