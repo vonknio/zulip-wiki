@@ -16,3 +16,5 @@ Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retri
 
 Zulip Terminal uses [urwid](http://urwid.org/) to render the UI components in terminal. Urwid is an awesome library through which you can render a decent terminal UI just using python. [Urwid's Tutorial](http://urwid.org/tutorial/index.html) is a great place to start for new contributors.
 
+## Tests
+Tests for zulip-terminal are written using [pytest](https://pytest.org/). You can read the tests in `/tests` folder to learn about writing tests for a new class/function. If you are new to pytest, reading it's documentation is definitely recommended.
