@@ -9,4 +9,7 @@ Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retri
 |              ui.py                                    | Controls where each component is displayed    |
 |              core.py                                  | Runs the app and controls data flow into View |
 |              model.py                                 | Fetches and stores data retrieved from server |
-|              [Others]                                 | Helpers for the above files.                  |
+|              helper.py                                | has helper functions used at multiple places  |
+|              config.py                                | Stores keybindings along with what they do    |
+|              ui_tools                                 | Has all the UI elements displayed by View     |
+|              cli/run.py                               | Runs the app                                  |
