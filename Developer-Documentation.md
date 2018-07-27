@@ -9,7 +9,10 @@ Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retri
 |              ui.py                                    | Controls where each component is displayed    |
 |              core.py                                  | Runs the app and controls data flow into View |
 |              model.py                                 | Fetches and stores data retrieved from server |
-|              helper.py                                | Helper functions used at multiple places  |
+|              helper.py                                | Helper functions used at multiple places      |
 |              config.py                                | Stores keybindings along with what they do    |
 |              ui_tools                                 | Has all the UI elements displayed by View     |
 |              cli/run.py                               | Runs the app                                  |
+
+Zulip Terminal is uses [urwid](http://urwid.org/) render it's UI in the terminal. Urwid is an awesome library through which use can render a decent terminal UI in python. [Urwid's Tutorial] is a great place to start if looking forward to contributing to zulip-terminal. :)
+
