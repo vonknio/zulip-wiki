@@ -57,3 +57,65 @@ On startup, the app registers for the events on the server which it is willing t
                                         apply_markdown=True)
 ```
 
+Now, to see the type of data server is sending we will write the response from the server to a file.
+
+To do so, we temporarily add the following lines to the function `poll_for_events` in `model.py`. The function uses long polling to stay to in contact with the server and continuously receives events from the server. 
+
+``` diff
+
+# zulipterminal/model.py
+
+            for event in response['events']:
++               with open('type', 'a') as f:
++                   f.write(str(event) + "\n")
+                last_event_id = max(last_event_id, int(event['id']))
+```
+
+Now, run zulip terminal and open web app from a different account. Start composing a message to your terminal account from the web app and you will start receiving 2 types of events:
+
+**Start**
+```
+{
+  'type': 'typing',
+  'op': 'start',
+  'sender': {
+    'user_id': 4,
+    'email': 'hamlet@zulip.com'
+  },
+  'recipients': [{
+    'user_id': 2,
+    'email': 'ZOE@zulip.com'
+  }, {
+    'user_id': 4,
+    'email': 'hamlet@zulip.com'
+  }, {
+    'user_id': 5,
+    'email': 'iago@zulip.com'
+  }],
+  'id': 0
+}
+```
+
+
+**Stop**
+```
+{
+  'type': 'typing',
+  'op': 'stop',
+  'sender': {
+    'user_id': 4,
+    'email': 'hamlet@zulip.com'
+  },
+  'recipients': [{
+    'user_id': 2,
+    'email': 'ZOE@zulip.com'
+  }, {
+    'user_id': 4,
+    'email': 'hamlet@zulip.com'
+  }, {
+    'user_id': 5,
+    'email': 'iago@zulip.com'
+  }],
+  'id': 1
+}
+```
