@@ -129,10 +129,3 @@ Now to display if user is typing in the view, we need to check few things:
 
 If all the above conditions are satisfied we can successfully update the footer to display `X is typing` until we receive
 a `stop` event for typing.
-
-
-
-
-
-
-
