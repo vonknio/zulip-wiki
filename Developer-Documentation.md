@@ -29,4 +29,31 @@ A quick google search for `zulip typing indicator` points to https://zulip.readt
 
 You can find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems and understand how they work internally.
 
-https://chat.zulip.org/api/ shows how to reach the endpoints and what response to expect from the server.
+https://chat.zulip.org/api/ shows how to reach the endpoints and what response to expect from the server. There are two parts to this feature.
+
+There are two parts to implementing typing indicator.
+* Receive typing event from server.
+* Send typing event to the server.
+
+We will be implementing the first part. **Receive typing event from server.**:
+
+On startup, the app registers for the events on the server which it is willing to handle. To receive updates for `typing` events, we need to add 'typing' to the initially registered events. 
+
+`register_initial_desired_events` in `core.py` is the function responsible for registering the events.
+``` diff
+
+# zulipterminal/core.py
+
+    @async
+    def register_initial_desired_events(self) -> None:
+        event_types = [
+            'message',
+            'update_message',
+            # ...
++           'typing',
+            # ...
+        ]
+        response = self.client.register(event_types=event_types,
+                                        apply_markdown=True)
+```
+
