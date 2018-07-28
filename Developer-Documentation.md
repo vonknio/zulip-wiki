@@ -23,4 +23,8 @@ Tests for zulip-terminal are written using [pytest](https://pytest.org/). You ca
 ## Tutorial - Adding typing indicator
 This tutorial shows how typing indicator was implemented in the client. The process for adding a new feature to zulip terminal varies greatly depending on the feature. This tutorial is intended to make you familiar with the general process.
 
-Since the typing indicator data for the other user in pm cannot be generated locally, it must something which should be received from the client. A quick google search for `zulip typing indicator` points to https://zulip.readthedocs.io/en/latest/subsystems/typing-indicators.html. This document explains how typing indicator is implemented on the web client and is useful in understand how typing indicator works internally. You can generally find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems or https://chat.zulip.org/api.
+Since the typing indicator data for the other user in pm cannot be generated locally, it must something which should be received from the client.
+
+A quick google search for `zulip typing indicator` points to https://zulip.readthedocs.io/en/latest/subsystems/typing-indicators.html. This document explains how typing indicator is implemented on the web client and is useful in understand how typing indicator works internally.
+
+You can generally find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems or https://chat.zulip.org/api.
