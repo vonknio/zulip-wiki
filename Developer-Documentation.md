@@ -27,4 +27,6 @@ Since the typing indicator data for the other user in pm cannot be generated loc
 
 A quick google search for `zulip typing indicator` points to https://zulip.readthedocs.io/en/latest/subsystems/typing-indicators.html. This document explains how typing indicator is implemented on the web client and is useful in understand how typing indicator works internally.
 
-You can generally find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems or https://chat.zulip.org/api.
+You can find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems and understand how they work internally.
+
+https://chat.zulip.org/api/ shows how to reach the endpoints and what response to expect from the server.
