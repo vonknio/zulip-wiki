@@ -119,3 +119,20 @@ Now, run zulip terminal and open web app from a different account. Start composi
   'id': 1
 }
 ```
+
+You can view these events in the `type` file in your `zulip-terminal` home directory.
+
+Now to display if user is typing in the view, we need to check few things:
+* The `op` is `start`.
+* User is narrowed into PM with a user.
+* The `user_id` of the person is present in the narrowed PM recipients.
+
+If all the above conditions are satisfied we can successfully update the footer to display `X is typing` until we receive
+a `stop` event for typing.
+
+
+
+
+
+
+
