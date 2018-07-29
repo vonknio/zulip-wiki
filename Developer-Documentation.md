@@ -168,4 +168,23 @@ changes the footer text, and this
 ```python
 self.controller.update_screen()
 ```
-updates the screen to display the changes.
+updates the screen to display the changes. This fully implements the typing feature. 
+
+### Writing tests
+Now, we update the tests for `register_initial_desired_events` by adding `typing`
+to the event types.
+```diff
+# tests/core/test_core.py
+
+        event_types = [
+            'message',
+            'update_message',
+            'reaction',
++           'typing',
+        ]
+        controller.client.register.assert_called_once_with(
+                                   event_types=event_types,
+                                   apply_markdown=True)
+```
+We created a new function `handle_typing_event` in `ui.py`, hence we need to created a new test function for it in `test_ui.py`.
+
