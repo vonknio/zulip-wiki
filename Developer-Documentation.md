@@ -133,7 +133,7 @@ a `stop` event for typing.
 To check for the above conditions, we create a function in `ui.py`:
 ```python
 
-    def handle_typing_event(self, event) -> None:
+    def handle_typing_event(self, event: Dict['str', Any]) -> None:
         # If the user is in pm narrow with the person typing
         if len(self.model.narrow) == 1 and\
                 self.model.narrow[0][0] == 'pm_with' and\
