@@ -186,5 +186,5 @@ to the event types.
                                    event_types=event_types,
                                    apply_markdown=True)
 ```
-We created a new function `handle_typing_event` in `ui.py`, hence we need to created a new test function for it in `test_ui.py`.
+We created a new function `handle_typing_event` in `ui.py`, hence we need to created a new test function for it in `test_ui.py`. Please look at `test_handle_typing_event` in `test_ui.py` and understand it's implementation.
 
