@@ -186,5 +186,7 @@ to the event types.
                                    event_types=event_types,
                                    apply_markdown=True)
 ```
-We created a new function `handle_typing_event` in `ui.py`, hence we need to created a new test function for it in `test_ui.py`. Please look at `test_handle_typing_event` in `test_ui.py` and understand it's implementation.
 
+`test_handle_typing_event` in `test_ui.py` implements testing for `handle_typing_event`. Please read it to understand how to write tests for a new function in zulip terminal.
+
+Thanks for reading the tutorial. See you on the other side now, i.e, pull request side. :smiley: 
