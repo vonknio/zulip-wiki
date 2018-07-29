@@ -129,3 +129,43 @@ Now to display if user is typing in the view, we need to check few things:
 
 If all the above conditions are satisfied we can successfully update the footer to display `X is typing` until we receive
 a `stop` event for typing.
+
+To check for the above conditions, we create a function in `ui.py`:
+```python
+
+    def handle_typing_event(self, event) -> None:
+        # If the user is in pm narrow with the person typing
+        if len(self.model.narrow) == 1 and\
+                self.model.narrow[0][0] == 'pm_with' and\
+                event['sender']['email'] in self.model.narrow[0][1].split(','):
+            if event['op'] == 'start':
+                user = self.model.user_dict[event['sender']['email']]
+                self._w.footer.set_text([
+                    ' ',
+                    ('code', user['full_name']),
+                    ' is typing...'
+                ])
+                self.controller.update_screen()
+            elif event['op'] == 'stop':
+                self._w.footer.set_text(self.get_random_help())
+                self.controller.update_screen()
+```
+If the conditions are satisfied, we display `x is typing` if the `op` is `start` and display help message if the `op` is `stop`.
+
+There are two parts to updating a widget in urwid:
+* Changing the widget
+* Updating the screen
+
+This line of code,
+```python
+self._w.footer.set_text([
+                    ' ',
+                    ('code', user['full_name']),
+                    ' is typing...'
+                ])
+```
+changes the footer text, and this
+```python
+self.controller.update_screen()
+```
+updates the screen to display the changes.
