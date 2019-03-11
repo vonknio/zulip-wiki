@@ -1,7 +1,7 @@
 **Zulip Terminal** is a light and fast terminal client for [Zulip](https://zulipchat.com). It's written in python and :snake: only.
 
 ## Overview
-Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retrieve all the information it displays. It has an [MVC structure](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) overall. Here is a description of some of it's files:
+Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retrieve all the information it displays. It has an [MVC structure](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) overall. Here is a description of some of its files:
  
 | File/Folder                                           | Description                                   |
 | ----------------------------------------------------- | --------------------------------------------- |
@@ -17,7 +17,7 @@ Zulip Terminal uses [Zulip's API](https://zulipchat.com/api/) to store and retri
 Zulip Terminal uses [urwid](http://urwid.org/) to render the UI components in terminal. Urwid is an awesome library through which you can render a decent terminal UI just using python. [Urwid's Tutorial](http://urwid.org/tutorial/index.html) is a great place to start for new contributors.
 
 ## Tests
-Tests for zulip-terminal are written using [pytest](https://pytest.org/). You can read the tests in `/tests` folder to learn about writing tests for a new class/function. If you are new to pytest, reading it's documentation is definitely recommended.
+Tests for zulip-terminal are written using [pytest](https://pytest.org/). You can read the tests in `/tests` folder to learn about writing tests for a new class/function. If you are new to pytest, reading its documentation is definitely recommended.
 
 
 ## Tutorial - Adding typing indicator
@@ -25,7 +25,7 @@ This tutorial shows how typing indicator was implemented in the client. The proc
 
 Since the typing indicator data for the other user in pm cannot be generated locally, it must something which should be received from the client.
 
-A quick google search for `zulip typing indicator` points to https://zulip.readthedocs.io/en/latest/subsystems/typing-indicators.html. This document explains how typing indicator is implemented on the web client and is useful in understand how typing indicator works internally.
+A quick google search for `zulip typing indicator` points to https://zulip.readthedocs.io/en/latest/subsystems/typing-indicators.html. This document explains how typing indicator is implemented on the web client and is useful in understanding how typing indicator works internally.
 
 You can find most of the web features documented in https://zulip.readthedocs.io/en/latest/subsystems and understand how they work internally.
 
@@ -35,7 +35,7 @@ There are two parts to implementing typing indicator.
 * Receive typing event from server.
 * Send typing event to the server.
 
-We will be implementing the first part. **Receive typing event from server.**:
+We will be implementing the first part. **Receive typing event from server**:
 
 On startup, the app registers for the events on the server which it is willing to handle. To receive updates for `typing` events, we need to add 'typing' to the initially registered events. 
 
@@ -59,7 +59,7 @@ On startup, the app registers for the events on the server which it is willing t
 
 Now, to see the type of data server is sending we will write the response from the server to a file.
 
-To do so, we temporarily add the following lines to the function `poll_for_events` in `model.py`. The function uses long polling to stay to in contact with the server and continuously receives events from the server. 
+To do so, we temporarily add the following lines to the function `poll_for_events` in `model.py`. The function uses long polling to stay in contact with the server and continuously receives events from the server. 
 
 ``` diff
 
